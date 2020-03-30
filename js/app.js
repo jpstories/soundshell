@@ -126,23 +126,6 @@ document.getElementsByClassName('visualization-toggle')[0].addEventListener('cli
   }
 });
 
-let playingWatch = 0;
-let spanPlayBtn = document.querySelectorAll('.music__play span');
-let playBtn = document.querySelector('.music__play');
-
-playBtn.addEventListener('click', () => {
-  spanPlayBtn.forEach((item) => {
-    console.log(item);
-    if(playingWatch == 0){
-      item.style.display = 'none';
-      playingWatch = 1;
-    } else {
-      item.style.display = 'block';
-      playingWatch = 0;
-    }
-  });
-})
-
 let volumeRanger = document.querySelector('.amplitude-volume-slider');
 
 volumeRanger.value = '10';

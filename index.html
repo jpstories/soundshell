@@ -5,36 +5,46 @@
     <link href="https://fonts.googleapis.com/css?family=Lato:400,400i" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="css/style.css" />
     <link rel="stylesheet" type="text/css" href="css/input.css" />
+    <link rel="stylesheet" type="text/css" href="css/playpause.css">
 </head>
 <body>
     <div id="visualizations-player">
         <section class="visual__data">
             <!-- 1 -->
             <div class="top-container">
-                <img class="now-playing-album-art" id="large-now-playing-album-art"
-                    data-amplitude-song-info="cover_art_url" />
+                
                 <div class="amplitude-visualization" id="large-visualization">
-
+                    <!-- <img src="https://521dimensions.com/img/open-source/amplitudejs/album-art/we-are-to-answer.jpg" width="100%" height="100%" alt=""> -->
+                    <img class="now-playing-album-art" id="large-now-playing-album-art"
+                    data-amplitude-song-info="cover_art_url" />
                 </div>
             </div>
             <!-- 2 -->
             <div class="song__title-wave">
                 <div class="meta-data-container">
-                    <span class="now-playing-name" data-amplitude-song-info="name"></span>
-                    <span class="now-playing-artist-album">
-                        <span class="now-playing-artist" data-amplitude-song-info="artist"></span> - <span
-                            class="now-playing-album" data-amplitude-song-info="album"></span>
-                    </span>
+
+                    <div class="amplitude-play-pause amplitude-paused">
+                        <a role="button" href="" class="sc-button-play playButton sc-button m-stretch" 
+                        tabindex="0" title="Play" draggable="true">Play</a>
+                    </div>
+
+                    <div class="now-playing__box">
+                        <span class="now-playing-name" data-amplitude-song-info="name"></span>
+                        <span class="now-playing-artist-album">
+                            <span class="now-playing-artist" data-amplitude-song-info="artist"></span> - <span
+                                class="now-playing-album" data-amplitude-song-info="album"></span>
+                        </span>
+                    </div>
                 </div>
 
                 <div class="amplitude-wave-form">
                 </div>
-
                 <!-- <div class="song-navigation">
                     <input type="range" class="amplitude-song-slider" />
                 </div> -->
-
-                <input type="range" class="amplitude-song-slider" id="global-large-song-slider" />
+                <div class="song-navigation">
+                    <input type="range" class="amplitude-song-slider" id="global-large-song-slider" />
+                </div>
 
                 <div class="timegate">
                     <span class="amplitude-current-time"></span>
@@ -52,14 +62,6 @@
         <div class="control-container">
             <div class="amplitude-prev">
 
-            </div>
-
-            <div class="amplitude-play-pause amplitude-paused">
-                <div class="music__play">
-                    <span class="play__button1"></span>
-                    <span class="play__button2"></span>
-                    <span class="play__button3"></span>
-                </div>
             </div>
 
             <div class="amplitude-next">
@@ -104,112 +106,23 @@
                             data-amplitude-song-index="1"></span>
                     </div>
                 </div>
-                <div class="song amplitude-song-container amplitude-play-pause" data-amplitude-song-index="2">
-                    <!-- <span class="song-position">03</span> -->
-                    <img class="song-album-art" data-amplitude-song-info="cover_art_url"
-                        data-amplitude-song-index="2" />
-                    <div class="song-meta-data-container">
-                        <span class="song-name" data-amplitude-song-info="name" data-amplitude-song-index="2"></span>
-                        <span class="song-artist" data-amplitude-song-info="artist"
-                            data-amplitude-song-index="2"></span>
-                    </div>
-                </div>
-                <div class="song amplitude-song-container amplitude-play-pause" data-amplitude-song-index="3">
-                    <!-- <span class="song-position">04</span> -->
-                    <img class="song-album-art" data-amplitude-song-info="cover_art_url"
-                        data-amplitude-song-index="3" />
-                    <div class="song-meta-data-container">
-                        <span class="song-name" data-amplitude-song-info="name" data-amplitude-song-index="3"></span>
-                        <span class="song-artist" data-amplitude-song-info="artist"
-                            data-amplitude-song-index="3"></span>
-                    </div>
-                </div>
-                <div class="song amplitude-song-container amplitude-play-pause" data-amplitude-song-index="4">
-                    <!-- <span class="song-position">05</span> -->
-                    <img class="song-album-art" data-amplitude-song-info="cover_art_url"
-                        data-amplitude-song-index="4" />
-                    <div class="song-meta-data-container">
-                        <span class="song-name" data-amplitude-song-info="name" data-amplitude-song-index="4"></span>
-                        <span class="song-artist" data-amplitude-song-info="artist"
-                            data-amplitude-song-index="4"></span>
-                    </div>
-                </div>
-                <div class="song amplitude-song-container amplitude-play-pause" data-amplitude-song-index="5">
-                    <!-- <span class="song-position">06</span> -->
-                    <img class="song-album-art" data-amplitude-song-info="cover_art_url"
-                        data-amplitude-song-index="5" />
-                    <div class="song-meta-data-container">
-                        <span class="song-name" data-amplitude-song-info="name" data-amplitude-song-index="5"></span>
-                        <span class="song-artist" data-amplitude-song-info="artist"
-                            data-amplitude-song-index="5"></span>
-                    </div>
-                </div>
-                <div class="song amplitude-song-container amplitude-play-pause" data-amplitude-song-index="6">
-                    <!-- <span class="song-position">07</span> -->
-                    <img class="song-album-art" data-amplitude-song-info="cover_art_url"
-                        data-amplitude-song-index="6" />
-                    <div class="song-meta-data-container">
-                        <span class="song-name" data-amplitude-song-info="name" data-amplitude-song-index="6"></span>
-                        <span class="song-artist" data-amplitude-song-info="artist"
-                            data-amplitude-song-index="6"></span>
-                    </div>
-                </div>
-                <div class="song amplitude-song-container amplitude-play-pause" data-amplitude-song-index="7">
-                    <!-- <span class="song-position">08</span> -->
-                    <img class="song-album-art" data-amplitude-song-info="cover_art_url"
-                        data-amplitude-song-index="7" />
-                    <div class="song-meta-data-container">
-                        <span class="song-name" data-amplitude-song-info="name" data-amplitude-song-index="7"></span>
-                        <span class="song-artist" data-amplitude-song-info="artist"
-                            data-amplitude-song-index="7"></span>
-                    </div>
-                </div>
-                <div class="song amplitude-song-container amplitude-play-pause" data-amplitude-song-index="8">
-                    <!-- <span class="song-position">09</span> -->
-                    <img class="song-album-art" data-amplitude-song-info="cover_art_url"
-                        data-amplitude-song-index="8" />
-                    <div class="song-meta-data-container">
-                        <span class="song-name" data-amplitude-song-info="name" data-amplitude-song-index="8"></span>
-                        <span class="song-artist" data-amplitude-song-info="artist"
-                            data-amplitude-song-index="8"></span>
-                    </div>
-                </div>
-                <div class="song amplitude-song-container amplitude-play-pause" data-amplitude-song-index="9">
-                    <!-- <span class="song-position">10</span> -->
-                    <img class="song-album-art" data-amplitude-song-info="cover_art_url"
-                        data-amplitude-song-index="9" />
-                    <div class="song-meta-data-container">
-                        <span class="song-name" data-amplitude-song-info="name" data-amplitude-song-index="9"></span>
-                        <span class="song-artist" data-amplitude-song-info="artist"
-                            data-amplitude-song-index="9"></span>
-                    </div>
-                </div>
-                <div class="song amplitude-song-container amplitude-play-pause" data-amplitude-song-index="10">
-                    <!-- <span class="song-position">11</span> -->
-                    <img class="song-album-art" data-amplitude-song-info="cover_art_url"
-                        data-amplitude-song-index="10" />
-                    <div class="song-meta-data-container">
-                        <span class="song-name" data-amplitude-song-info="name" data-amplitude-song-index="10"></span>
-                        <span class="song-artist" data-amplitude-song-info="artist"
-                            data-amplitude-song-index="10"></span>
-                    </div>
-                </div>
-            </div>
 
+            </div>
         </div>
     </div>
 
     <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100">
         <defs>
             <linearGradient id="gradient" x1="0%" y1="0%" x2="0%" y2="100%">
-                <stop offset="0%" stop-color="#03C1EB" />
-                <stop offset="100%" stop-color="#86F3B8" />
+                <stop offset="0%" stop-color="#ededed" />
+                <stop offset="100%" stop-color="#707070" />
             </linearGradient>
         </defs>
     </svg>
     <script type="text/javascript" src="./node_modules/amplitudejs/dist/amplitude.js"></script>
     <script type="text/javascript" src="./js/visual.js"></script>
-    <script type="text/javascript" src="js/app.js"></script>
+    <script type="text/javascript" src="./js/app.js"></script>
+    <script type="text/javascript" src="./js/playpause.js"></script>
 </body>
 
 </html>
