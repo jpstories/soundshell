@@ -6,6 +6,8 @@
     <link rel="stylesheet" type="text/css" href="css/style.css" />
     <link rel="stylesheet" type="text/css" href="css/input.css" />
     <link rel="stylesheet" type="text/css" href="css/playpause.css">
+    <link rel="stylesheet" type="text/css" href="css/time-progress.css">
+    
 </head>
 <body>
     <div id="visualizations-player">
@@ -25,7 +27,7 @@
 
                     <div class="amplitude-play-pause amplitude-paused">
                         <a role="button" href="" class="sc-button-play playButton sc-button m-stretch" 
-                        tabindex="0" title="Play" draggable="true">Play</a>
+                        tabindex="0" title="Play" draggable="false">Play</a>
                     </div>
 
                     <div class="now-playing__box">
@@ -39,16 +41,24 @@
 
                 <div class="amplitude-wave-form">
                 </div>
-                <!-- <div class="song-navigation">
-                    <input type="range" class="amplitude-song-slider" />
-                </div> -->
-                <div class="song-navigation">
-                    <input type="range" class="amplitude-song-slider" id="global-large-song-slider" />
-                </div>
-
-                <div class="timegate">
-                    <span class="amplitude-current-time"></span>
-                    <span class="amplitude-time-remaining"></span>
+                <!--  -->
+                <div class="time-container">
+                    <div class="time-progress">
+                        <div id="progress-container">
+                            <input type="range" class="amplitude-song-slider" />
+                            <progress id="song-played-progress" class="amplitude-song-played-progress"></progress>
+                            <progress id="song-buffered-progress" class="amplitude-buffered-progress" value="0"></progress>
+                        </div>
+                
+                        <div class="time-container">
+                            <span class="current-time">
+                                <span class="amplitude-current-minutes"></span>:<span class="amplitude-current-seconds"></span>
+                            </span>
+                            <span class="duration">
+                                <span class="amplitude-duration-minutes"></span>:<span class="amplitude-duration-seconds"></span>
+                            </span>
+                        </div>
+                    </div>
                 </div>
             </div>
             <!-- 3 -->
@@ -59,17 +69,44 @@
             </div>
         </section>
         <!--  -->
-        <div class="control-container">
-            <div class="amplitude-prev">
+            <div class="control-container">
+                <div class="control__wrap">
+                    <!-- 1 -->
+                    <div class="next__prev">
+                        <div class="amplitude-prev"></div>
 
-            </div>
+                        <div class="amplitude-play-pause amplitude-paused">
+                            <a id="offbg" role="button" href="" class="control-panel sc-button-play playButton sc-button m-stretch" 
+                            tabindex="0" title="Play" draggable="false">Play</a>
+                        </div>
 
-            <div class="amplitude-next">
-
-            </div>
-            <div class="volume__Ranger">
-                <span class="volume__Ranger-title">Volume</span>
-                <input name="volume" type="range" class="amplitude-volume-slider" />
+                        <div class="amplitude-next"></div>
+                    </div>
+                    <!-- 2 -->
+                    <div class="time-wrap_fixed">
+                        <div id="time-progress-fixed" class="time-progress">
+                            <div id="progress-container">
+                                <!-- <input id="time-input_fixed" type="range" class="amplitude-song-slider" /> -->
+                                <progress id="song-played-progress" class="amplitude-song-played-progress"></progress>
+                                <progress id="song-buffered-progress" class="amplitude-buffered-progress" value="0"></progress>
+                            </div>
+                    
+                            <div class="time-container" id="time-container-fixed">
+                                <span class="current-time" id="time-container-fixedCurrent">
+                                    <span class="amplitude-current-minutes"></span>:<span class="amplitude-current-seconds"></span>
+                                </span>
+                                <span class="duration" id="time-container-fixedDuration">
+                                    <span class="amplitude-duration-minutes"></span>:<span class="amplitude-duration-seconds"></span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 3 -->
+                    <div class="volume__wrap-vol">
+                        <label for="r">Volume</label>
+                        <input id="r" type="range" class="amplitude-volume-slider"/>
+                    </div>
+                </div>
             </div>
         </div>
         <!--  -->
@@ -86,7 +123,7 @@
             </div>
 
             <div class="songs-container">
-                <div class="song amplitude-song-container amplitude-play-pause" data-amplitude-song-index="0">
+                <div class="song amplitude-song-container amplitude-play-pause sc-button-play" data-amplitude-song-index="0">
                     <!-- <span class="song-position">01</span> -->
                     <img class="song-album-art" data-amplitude-song-info="cover_art_url"
                         data-amplitude-song-index="0" />
@@ -96,7 +133,7 @@
                             data-amplitude-song-index="0"></span>
                     </div>
                 </div>
-                <div class="song amplitude-song-container amplitude-play-pause" data-amplitude-song-index="1">
+                <div class="song amplitude-song-container amplitude-play-pause sc-button-play" data-amplitude-song-index="1">
                     <!-- <span class="song-position">02</span> -->
                     <img class="song-album-art" data-amplitude-song-info="cover_art_url"
                         data-amplitude-song-index="1" />
@@ -104,6 +141,16 @@
                         <span class="song-name" data-amplitude-song-info="name" data-amplitude-song-index="1"></span>
                         <span class="song-artist" data-amplitude-song-info="artist"
                             data-amplitude-song-index="1"></span>
+                    </div>
+                </div>
+                <div class="song amplitude-song-container amplitude-play-pause sc-button-play" data-amplitude-song-index="2">
+                    <!-- <span class="song-position">02</span> -->
+                    <img class="song-album-art" data-amplitude-song-info="cover_art_url"
+                        data-amplitude-song-index="2" />
+                    <div class="song-meta-data-container">
+                        <span class="song-name" data-amplitude-song-info="name" data-amplitude-song-index="2"></span>
+                        <span class="song-artist" data-amplitude-song-info="artist"
+                            data-amplitude-song-index="2"></span>
                     </div>
                 </div>
 

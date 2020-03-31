@@ -35,26 +35,17 @@ div#pre-load-img-container {
     margin: 5px;
 }
 
-/* color change */
-.amplitude-volume-slider{
-  background: none;
-}
-
-.volume__Ranger-title{
-  margin-right: 10px;
-  color: rgb(163, 13, 201);
-}
-
-
 .top-container {
     position: relative;
 }
 
     div.amplitude-visualization {
-      width: 220px;
-      height: 220px;
+      width: 260px;
+      height: 260px;
       box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.5);
-      background-color: rgb(26, 26, 26); 
+      background-color: rgb(26, 26, 26);
+      margin-left: 8px;
+      margin-top: 20px;
     }
 
     img.now-playing-album-art {
@@ -118,33 +109,20 @@ div#pre-load-img-container {
   /*
     Large Only
   */
-  div.control-container {
-    margin-top: 30px;
-    display: flex; 
-    flex-flow: row;
-    width: 100%;
-    height: max-content;
-    align-items: center;
-    justify-content: space-evenly;
-    background: rgba(75, 75, 75, 0.301);
-}
-    div.control-container div.amplitude-prev {
-      width: 18px;
-      height: 24px;
-      background: url("https://521dimensions.com/img/open-source/amplitudejs/examples/visualizations/prev.svg");
-      background-size: cover;
-      cursor: pointer;
-        
-    }
 
-.amplitude-play-pause{
-  
+.amplitude-prev {
+    width: 18px;
+    height: 24px;
+    background: url("../img/next-prev/next-prev.svg");
+    background-size: cover;
+    cursor: pointer;
+    transform: rotateY(180deg);   
 }
 
 .amplitude-next {
     width: 18px;
     height: 24px;
-    background: url("https://521dimensions.com/img/open-source/amplitudejs/examples/visualizations/next.svg");
+    background: url("../img/next-prev/next-prev.svg");
     background-size: cover;
     cursor: pointer;
 }
@@ -159,31 +137,130 @@ div#pre-load-img-container {
     flex-flow: row;
     width: 100%;
     align-items: center;
-    margin-top: 10px;
+    margin-top: 20px;
+}
+
+.time-wrap_fixed{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 50px;
+  width: 700px;
+  height: 100%;
 }
 
 .now-playing__box{
-    margin-left: 40px;
+    width: 80%;
+    margin-left: 2%;
+    margin-top: 10px;
 }
 
-    div.meta-data-container span.now-playing-name {
-      display: block;
-      text-align: center;
-      margin-bottom: 15px;
-      font-size: 28px;
-      font-weight: 700;
-      color: white;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis; }
-    div.meta-data-container span.now-playing-artist-album {
-      display: block;
-      text-align: center;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      font-size: 14px;
-      color: rgba(255, 255, 255, 0.7); }
+.control-container {
+  display: flex; 
+  flex-flow: row;
+  height: max-content;
+  align-items: center;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+
+.control__wrap {
+  width: 100%;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: solid 1px #d0d0d0;
+  padding: 0 .75em;
+  background: linear-gradient(#f7f7f7, #efefef);
+  color: #929292;
+  font: 700 1em/2 trebuchet ms, verdana, arial, sans-serif;
+  position: relative;
+}
+
+#offbg{
+  background: none;
+}
+
+#offbg::before{
+  opacity: 0.8;
+  width: 50px;
+  height: 50px;
+  margin-top: 5px;
+  margin-left: 5px;
+}
+
+.volume__wrap-vol{
+  width: 100px;
+  height: 100%;
+  display: flex;
+  flex-flow: row;
+  align-items: center;
+  justify-content: space-between;
+  margin-right: 100px;
+}
+
+.next__prev{
+  margin-left: 20px;
+  width: 120px;
+  height: 100%;
+  display: flex;
+  flex-flow: row;
+  align-items: center;
+  justify-content: space-between;
+  background: rgb(240, 240, 240);
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 3px;
+}
+
+#time-progress-fixed{
+  width: 88%;
+  height: 100%;
+}
+#time-container-fixed{
+  width: 100%;
+  margin-top: -23px;
+}
+
+#time-container-fixedCurrent{
+  margin: 0 -22px;
+  border-left: 2px solid rgb(196, 196, 196);
+  padding-left: 5px;
+}
+
+#time-container-fixedDuration{
+  margin: 0 -22px;
+  border-right: 2px solid rgb(196, 196, 196);
+  padding-right: 5px;
+}
+
+.time-container{
+  width: 100%;
+}
+
+.now-playing-name {
+    display: block;
+    text-align: center;
+    margin-bottom: 15px;
+    font-size: 24px;
+    font-weight: 700;
+    color: white;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; 
+}
+.now-playing-artist-album {
+    display: block;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.7); 
+}
   
   /*
     Small only
@@ -197,7 +274,7 @@ div#pre-load-img-container {
 .amplitude-wave-form {
   width: 100%;
     display: flex;
-    margin-bottom: 18px; 
+    /* margin-bottom: 15px; */
     z-index: 50;
 }
 .amplitude-wave-form svg {

@@ -1,18 +1,20 @@
-window.addEventListener('DOMContentLoaded', () => {
-    let playKey = document.querySelector('.sc-button-play');
-    let pause = false;
-    playKey.addEventListener('click', (e) => {
+
+let playKey = document.querySelectorAll('.sc-button-play');
+let pause = false;
+playKey.forEach((item) => {
+    item.addEventListener('click', (e) => {
         e.preventDefault();
         if (pause === true) {
-            playKey.classList.remove('sc-button-pause');
-            playKey.textContent = 'Play';
-            playKey.setAttribute('title', 'Play');
+            playKey[0].classList.remove('sc-button-pause');
+            playKey[1].classList.remove('sc-button-pause');
             pause = false;
         } else {
-            playKey.classList.add('sc-button-pause');
-            playKey.textContent = 'Pause';
-            playKey.setAttribute('title', 'Pause');
+            playKey[0].classList.add('sc-button-pause');
+            playKey[1].classList.add('sc-button-pause');
             pause = true;
-        }
+        };
     });
-})
+});
+
+        // item.textContent = 'Play';
+        // item.setAttribute('title', 'Play');
