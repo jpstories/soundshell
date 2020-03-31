@@ -1,0 +1,158 @@
+@charset "UTF-8";
+/* ==================== ↓↓↓ NOT RELATED TO DEMO ↓↓↓ ==================== */
+#wwrap {
+  pointer-events: none;
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+html.up #wwrap {
+  flex-direction: column;
+}
+#wwrap [class*='warn--'] {
+  box-sizing: border-box;
+  position: relative;
+  margin: .5em 0;
+  padding: 1em .5em .5em;
+  width: calc(100% - 2em);
+  border-radius: 5px;
+  box-shadow: 0 0 5px dimgrey;
+  background: orangered;
+  color: #fff;
+  font: 1.25rem arial, sans-serif;
+  transition: transform 0.3s cubic-bezier(0.65, -0.29, 0.73, 0.05);
+  pointer-events: auto;
+}
+#wwrap [class*='warn--'].hidden {
+  transform: scale(0);
+}
+#wwrap .warn__close {
+  position: absolute;
+  border: none;
+  background: none;
+  top: .25em;
+  right: .25em;
+  transition: .3s;
+  font-size: .75em;
+  cursor: pointer;
+}
+#wwrap .warn__close:focus {
+  outline: none;
+}
+#wwrap .warn__close:focus, #wwrap .warn__close:hover {
+  color: #fff;
+}
+#wwrap .warn__close:active {
+  transform: translatey(2px) scale(0.9);
+  color: crimson;
+}
+
+/* ==================== ↑↑↑ NOT RELATED TO DEMO ↑↑↑ ==================== */
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+}
+
+
+.control__wrap input[type='range'] {
+  --val: 50;
+  --pos: calc(1em + .01*var(--val)*(100% - 2em));
+  margin: .75em;
+  width: 25em;
+  min-height: 4em;
+  height: 2em;
+  background: none;
+  filter: grayscale(0.1);
+  cursor: pointer;
+}
+.control__wrap input[type='range']::-webkit-slider-runnable-track, input[type='range']::-webkit-slider-thumb, input[type='range'] {
+  -webkit-appearance: none;
+}
+.control__wrap input[type='range']::-webkit-slider-runnable-track {
+  border: none;
+  width: 100%;
+  height: 1em;
+  border-radius: 5px;
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.35);
+  background: #e6e6e6;
+  color: transparent;
+}
+.js input[type='range']::-webkit-slider-runnable-track {
+  background-image: linear-gradient(#e49115, #f19b2b);
+  background-repeat: no-repeat;
+  background-size: var(--pos);
+}
+.control__wrap input[type='range']::-moz-range-track {
+  border: none;
+  width: 100%;
+  height: 1em;
+  border-radius: 5px;
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.35);
+  background: #e6e6e6;
+  color: transparent;
+}
+.control__wrap input[type='range']::-ms-track {
+  border: none;
+  width: 100%;
+  height: 1em;
+  border-radius: 5px;
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.35);
+  background: #e6e6e6;
+  color: transparent;
+}
+.control__wrap input[type='range']::-moz-range-progress {
+  height: 1em;
+  border-radius: 5px;
+  background: linear-gradient(#096daa, #4b8bf5);
+}
+.control__wrap input[type='range']::-ms-fill-lower {
+  height: 1em;
+  border-radius: 5px;
+  background: linear-gradient(#096daa, #4b8bf5);
+}
+.control__wrap input[type='range']::-webkit-slider-thumb {
+  margin-top: -0.5em;
+  box-sizing: border-box;
+  border: solid 0.5em transparent;
+  padding: 0;
+  width: 2em;
+  height: 2em;
+  border-radius: 50%;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.35), 0 0 1px 1px #a0a0a0, inset 0 1px 2px #b0b0b0;
+  background: linear-gradient(#f9f9f9, #e6e6e6) padding-box, radial-gradient(circle at 50% calc(50% + 1px), #fff calc(0.5em - 1px), rgba(255, 255, 255, 0) calc(0.5em + 2px)) border-box, linear-gradient(#f9f9f9, #e6e6e6) border-box;
+  cursor: ew-resize;
+}
+.control__wrap input[type='range']::-moz-range-thumb {
+  margin-top: 0;
+  box-sizing: border-box;
+  border: solid 0.5em transparent;
+  padding: 0;
+  width: 2em;
+  height: 2em;
+  border-radius: 50%;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.35), 0 0 1px 1px #a0a0a0, inset 0 1px 2px #b0b0b0;
+  background: linear-gradient(#f9f9f9, #e6e6e6) padding-box, radial-gradient(circle at 50% calc(50% + 1px), #fff calc(0.5em - 1px), rgba(255, 255, 255, 0) calc(0.5em + 2px)) border-box, linear-gradient(#f9f9f9, #e6e6e6) border-box;
+  cursor: ew-resize;
+}
+.control__wrap input[type='range']::-ms-thumb {
+  margin-top: 0;
+  box-sizing: border-box;
+  border: solid 0.5em transparent;
+  padding: 0;
+  width: 2em;
+  height: 2em;
+  border-radius: 50%;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.35), 0 0 1px 1px #a0a0a0, inset 0 1px 2px #b0b0b0;
+  background: linear-gradient(#f9f9f9, #e6e6e6) padding-box, radial-gradient(circle at 50% calc(50% + 1px), #fff calc(0.5em - 1px), rgba(255, 255, 255, 0) calc(0.5em + 2px)) border-box, linear-gradient(#f9f9f9, #e6e6e6) border-box;
+  cursor: ew-resize;
+}
+.control__wrap input[type='range']:focus {
+  outline: solid 0 transparent;
+  filter: none;
+}
