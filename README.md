@@ -1,5 +1,5 @@
 ### soundshell
-![fuh](https://user-images.githubusercontent.com/41709736/77921857-a33c4480-72e3-11ea-9f3b-24460fa6255c.png)
+![mits](https://user-images.githubusercontent.com/41709736/78001828-9d913e00-7379-11ea-848d-3313975943b7.png)
 
 
 
