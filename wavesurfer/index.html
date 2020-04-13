@@ -1,39 +1,108 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/playpause.css">
+    <link rel="stylesheet" href="./css/input.css">
 </head>
+
 <body>
     <div class="audio-content">
         <div class="audio">
-            <div class="audio__title">
-                <h2>Skrillex</h2>
-                <h3>Face My Fears (Japanese Version)</h3>
-            </div>
-            <div id="waveform"></div>
-        </div>
 
-        <div class="playBtn">
-            <span>Play</span>
+
+
+            <div class="audio__title">
+
+                <div class="audio__title-vinyl">
+                    <img class="vinyl__img" src="./img/vinyl.png" alt="">
+                </div>
+
+                <div class="audio__title-main">
+                    <div class="audio__play">
+                        <h2 class="artist__name">Skrillex</h2>
+                        <div class="playBtn playBtn__title">
+                            <a id="offbg" role="button" href=""
+                                class="control-panel sc-button-play playButton sc-button m-stretch" tabindex="0"
+                                title="Play" draggable="false">Play</a>
+                        </div>
+                    </div>
+                    <h3 class="track__name">Face My Fears (Bootleg Remix)</h3>
+                </div>
+
+            </div>
+
+
+
+            <div id="waveform"></div>
         </div>
 
         <div class="eq">
             <div class="eq__title">EQ: </div>
             <div id="equalizer">
-                <!--  -->
             </div>
         </div>
     </div>
 
-    <p class="lead pull-center" id="drop">
-        Playlist
-    </p>
+    <span class="playlist-title">Playlist</span>
+    <div class="lead pull-center" id="drop2">
+        <div class="list-group" id="playlist">
+            <a href="./Face My Fears (Japanese Version).mp3" class="list-group-item active">
+                <div class="playlist__song">
+                    <i class="glyphicon glyphicon-play">1</i>
+                    <span class="songTheme-artist">Skrillex</span>
+                    -
+                    <span class="songTheme-name">Face My Fears (Jap. version)</span>
+                </div>
+                <span class="badge">2:21</span>
+            </a>
 
+            <a href="./bootleg.128.mp3" class="list-group-item active">
+                <div class="playlist__song">
+                    <i class="glyphicon glyphicon-play">2</i>
+                    <span class="songTheme-artist">Skrillex</span>
+                    -
+                    <span class="songTheme-name">Face My Fears (Bootleg Remix)</span>
+                </div>
+                <span class="badge">3:04</span>
+            </a>
+
+            <a href="./avicii.mp3" class="list-group-item active">
+                <div class="playlist__song">
+                    <i class="glyphicon glyphicon-play">3</i>
+                    <span class="songTheme-artist">Avicii</span>
+                    -
+                    <span class="songTheme-name">Levels</span>
+                </div>
+                <span class="badge badge-info">1:26</span>
+            </a>
+        </div>
+    </div>
+
+    <div class="blur"></div>
+
+    <div class="control__panel">
+        [TEST]
+        <div class="playBtn playBtn-cp">
+            <a id="offbg" role="button" href="" class="control-panel sc-button-play playButton sc-button m-stretch"
+                tabindex="0" title="Play" draggable="false">Play</a>
+        </div>
+
+        <div class="current__track">
+
+        </div>
+
+        <div class="current__volume">
+            <input class="input__volume" type="range" value="35" min="0" max="100">
+        </div>
+    </div>
     <script src="wavesurfer.js"></script>
     <script src="app.js"></script>
 </body>
+
 </html>

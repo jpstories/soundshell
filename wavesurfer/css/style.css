@@ -10,38 +10,41 @@ body{
 .audio-content{
     width: 100%;
     height: max-content;
-    background: linear-gradient(to right, #322, #344);
+    background: linear-gradient(to right, rgb(39, 39, 39), rgb(53, 53, 53));
     height: max-content;
     min-width: 600px;
+    color: rgb(233, 233, 233);
+    
 }
 
-.playBtn{
-    width: 50px;
-    height: 50px;
-    background: orange;
-    border-radius: 100%;
-    line-height: 3;
-    text-align: center;
-    cursor: pointer;
-    transition: 0.1s;
-    margin: 20px auto;
+h2::first-letter{
+    color: rgb(253, 185, 57);
+    font-size: 180%;
 }
 
-.playBtn:hover{
-    background: rgb(192, 130, 14);
-    color: white;
+h2{
+    padding-left: 10px;
+    padding-top: 10px;
+    margin: 0px;
+    border-left: 5px solid orange;
+}
+
+h3{
+    margin-left: 15px;
+    text-decoration: dashed;
 }
 
 #equalizer{
-
     -webkit-tap-highlight-color: rgba(0,0,0,0);
     font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
     font-size: 14px;
     line-height: 1.42857143;
-    color: #333;
+    color: rgb(0, 0, 0);
     text-align: center;
     box-sizing: border-box;
     padding: 50px;
+    display: flex;
+    flex-flow: row;
 }
 
 input{
@@ -62,7 +65,6 @@ input{
 .audio{
     display: flex;
     flex-flow: column;
-    color: rgb(223, 223, 223);
 }
 
 .inputstyle::range-track {
@@ -98,8 +100,6 @@ input{
 
 .lead {
     text-align: center;
-    padding: 20px;
-    margin-bottom: 20px;
     font-size: 16px;
     font-weight: 300;
     line-height: 1.4;
@@ -107,13 +107,11 @@ input{
 }
 
 .audio__title{
-    width: max-content;
+    width: 100%;
     height: max-content;
     display: flex;
-    flex-flow: column;
+    flex-flow: row;
     align-items: flex-start;
-    justify-content: space-evenly;
-    margin-left: 10px;
 }
 
 .eq{
@@ -127,6 +125,151 @@ input{
 }
 
 .eq__title{
-    color: orange;
+    color: rgba(231, 231, 231, 0.973);
+    font-size: 1.5em;
+}
+
+#waveform{
+    background: linear-gradient(to right, rgb(54, 54, 54), rgb(66, 66, 66));
+    box-shadow: 0 0 1px 1px rgb(53, 53, 53);
+    cursor: pointer;
+    position: relative;
+}
+
+.blur{
+    width: 100%;
+    height: 70px;
+    /* background: rgba(20, 20, 20, 0.397); */
+    position: absolute;
+    left: 0;
+    top: 215px;
+    z-index: 9999;
+    background: rgba(29, 29, 29, 0.445);
+
+}
+
+.control__panel{
+    width: 100%;
+    height: 50px;
+    background: rgb(204, 204, 204);
+    position: fixed;
+    bottom: 0;
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.current__track{
+    height: 4px;
+    background: rgb(223, 150, 15);
+    border: 1px solid rgb(153, 153, 153);
+    width: 60%;
+}
+
+.current__volume{
+    width: 120px;
+    height: 100%;
+    background: rgb(168, 168, 168);
+}
+
+.input__volume{
+    height: 100px;
+    transform-origin: 55px 55px;
+    transform: rotate(90deg);
+}
+
+.audio__play{
+    display: flex;
+    flex-flow: row;
+    width: max-content;
+    height: max-content;
+    align-items: center;
+}
+
+.eq__boxes{
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+}
+
+.list-group{
+    display: flex;
+    flex-flow: column;
+    align-items: flex-start;
+    width: 100%;
+}
+
+.list-group a{
+    box-sizing: border-box;
+    width: 100%;
+    border-left: 8px solid rgb(82, 82, 82);
+    padding: 10px;
+    color: rgb(39, 39, 39);
+    text-decoration: none;
+}
+
+.list-group a:hover{
+    background: rgb(216, 216, 216);
+    border-color: rgb(231, 146, 17);
+}
+
+.playlist-title{
+    width: 100%;
+    height: 40px;
     font-size: 2em;
+    text-decoration: underline;
+    background: rgb(202, 202, 202);
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 0;
+}
+
+.active__song{
+    color: blue;
+}
+
+.audio__title-vinyl{
+    width: max-content;
+    height: max-content;
+    margin-right: 5px;
+    padding: 5px;
+}
+
+.vinyl__img{
+    width: 130px;
+    height: 130px;
+}
+
+.vinyl__round{
+    animation: vinyl__round 3s linear infinite;
+}
+
+@keyframes vinyl__round {
+    100% {
+        transform: rotateZ(360deg);
+    }
+    
+}
+
+.list-group-item{
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.glyphicon{
+    margin-right: 10px;
+    font-size: 1em;
+    font-family: monospace;
+}
+
+.badge{
+    border-left: 1px solid rgb(199, 199, 199);
+    padding-left: 5px;
+    width: 30px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
